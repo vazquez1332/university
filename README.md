@@ -1,3 +1,2 @@
 # university
-
-🍀
+lucky shot 🍀
