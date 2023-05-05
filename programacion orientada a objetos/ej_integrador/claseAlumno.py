@@ -31,7 +31,7 @@ class Alumno:
         elif self.__año==otro.__año:
             if self.__apellido<otro.__apellido:
                 retorno=not retorno
-            elif self.__apellido == otro.__apellido:
+            elif self.__apellido==otro.__apellido:
                 return self.__nombre<otro.__nombre
         return retorno
 
