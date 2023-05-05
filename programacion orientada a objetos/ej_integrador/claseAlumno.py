@@ -24,15 +24,17 @@ class Alumno:
     def getAño(self)->int:
         return self.__año
     
-    def __lt__(self, otro: "Alumno") -> bool:
-        if self.__año < otro.__año:
-            return True
-        elif self.__año == otro.__año:
-            if self.__apellido < otro.__apellido:
-                return True
+    def __lt__(self, otro: "Alumno")->bool:
+        retorno=False
+        if self.__año<otro.__año:
+            retorno=not retorno
+        elif self.__año==otro.__año:
+            if self.__apellido<otro.__apellido:
+                retorno=not retorno
             elif self.__apellido == otro.__apellido:
-                return self.__nombre < otro.__nombre
-        return False
+                return self.__nombre<otro.__nombre
+        return retorno
+
 
 
     
