@@ -1,0 +1,68 @@
+{
+    "__class__": "ManejaPersonal",
+    "lista": [
+        {
+            "__class__": "Investigador",
+            "__atributos__": {
+                "cuil": "222",
+                "apellido": "ruiz",
+                "nombre": "joaquin",
+                "sueldo_basico": "3400",
+                "antiguedad": "4",
+                "carrera": " ",
+                "cargo": " ",
+                "catedra": " ",
+                "area_investigacion": "poo",
+                "tipo_investigacion": "3"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos__": {
+                "cuil": "123",
+                "apellido": "apellido",
+                "nombre": "nombre",
+                "sueldo_basico": 6000,
+                "antiguedad": 5,
+                "carrera": "carrer",
+                "cargo": "exclusivo",
+                "catedra": "catedra",
+                "area_investigacion": "area Invest",
+                "tipo_investigacion": "tipoInv",
+                "categoria_investigacion": "categoria",
+                "importe_extra": 1000
+            }
+        },
+        {
+            "__class__": "Docente",
+            "__atributos__": {
+                "cuil": "111",
+                "apellido": "romero",
+                "nombre": "valentino",
+                "sueldo_basico": 9000,
+                "antiguedad": "4",
+                "carrera": "lsi",
+                "cargo": "docente",
+                "catedra": "fisica",
+                "area_investigacion": " ",
+                "tipo_investigacion": " "
+            }
+        },
+        {
+            "__class__": "PersonalApoyo",
+            "__atributos__": {
+                "cuil": "333",
+                "apellido": "romero",
+                "nombre": "valentino",
+                "sueldo_basico": "900",
+                "antiguedad": "4",
+                "carrera": " ",
+                "cargo": 30,
+                "catedra": " ",
+                "area_investigacion": " ",
+                "tipo_investigacion": " ",
+                "categoria": 16
+            }
+        }
+    ]
+}
