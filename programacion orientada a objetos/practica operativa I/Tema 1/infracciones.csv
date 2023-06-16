@@ -1,0 +1,11 @@
+dni;patente;tipoVehiculo;marca;fecha;descripcion;importeAPagar;Estado
+31455111;AB011XZ;Auto;Fiat;06/05/2022;semaforo en rojo;45000;N
+43123456;AE223HX;Auto;Renault;06/05/2022;estacionado en senda peatonal;15700;N
+21111222;A123BCD;Moto;Motomel;07/05/2022;estacionada en vereda;12000;N
+42115233;A006WFI;Moto;Suzuki;07/05/2022;semaforo en rojo;45000;P
+31455111;AB011XZ;Auto;Fiat;15/05/2022;semaforo en rojo;45000;N
+42115233;AE225GE;Auto;Chevrolet;16/05/2022;estacionamiento doble fila;36000;P
+20789123;B007WIF;Moto;Mondial;11/05/2022;semaforo en rojo;45000;P
+29663551;AF001GE;Auto;Jeep;01/05/2022;circulacion contramano;65000;N
+31455111;AB011XZ;Auto;Fiat;29/04/2022;semaforo en rojo;45000;N
+20789123;B007WIF;Moto;Mondial;01/04/2022;semaforo en rojo;45000;N
