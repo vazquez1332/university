@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST" action="{{ url_for('login') }}">
+    <div class="login-box">
+        <img src="../static/images/logo.jpg" class="avatar" >
+        <h1>Colegio San Miguel</h1>
+        <form>
+
+        <label for="email">Email</label>
+        <input type="email" name= "email" placeholder="Ingresar email" required>
+        <label for="contraseña">Contraseña</label>
+        <input type="password" name ="password" placeholder="Ingresar Contraseña" required>
+
+        <select name="user_type" required>
+            <option value="" disabled selected>Selecciona un tipo de usuario</option>
+                <option value="preceptor">Preceptor</option>
+                <option value="padre">Padre</option>
+            </select>
+        <input type="submit" value="Ingresar">
+
+        </form>
+    </div>
+    
+{% endblock %}

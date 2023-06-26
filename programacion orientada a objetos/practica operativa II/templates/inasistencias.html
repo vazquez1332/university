@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="inasistencia">
+            <div class ="encabezado">
+                <img src="../static/images/logo.jpg" class="avatar" >
+                <h1>Colegio San Miguel</h1>
+            </div>
+            <h2>Inasistencias</h2>
+
+            <table>
+                <tr>
+                    <th class="columna-separada1">Fecha</th>
+                    <th class="columna-separada">Tipo de clase</th>
+                    <th class="columna-separada">Justificación</th>
+                </tr>
+
+                {% for inasistencia in inasistencias %}
+                    <tr>
+                        <td>{{ inasistencia.fecha.strftime("%d/%m/%Y") }}</td>
+                        <td>{{ "Aula" if inasistencia.codigoclase == 1 else "Educación física" }}</td>
+                        <td>{{ inasistencia.justificacion }}</td>
+                    </tr>
+                {% endfor %}  
+                
+            </table>
+        <a href="{{ url_for('home') }}" class="btn btn-primary", >Volver</a>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class ="coninasistencias">
+        <div class ="encabezado">
+            <img src="../static/images/logo.jpg" class="avatar" >
+            <h1>Colegio San Miguel</h1>
+        </div>
+        
+        <h1>Consultar inasistencias</h1>
+        
+        <form action="{{ url_for('consultar_inasistencias') }}" method="post">
+            <label for="dni">DNI del estudiante:</label>
+            <input type="text" name="dni" id="dni" required>
+            <button type="submit">Consultar</button>
+        </form>
+        <a href="{{ url_for('home') }}" class="btn btn-primary">Volver</a>
+    </div>
+
+{% endblock %}

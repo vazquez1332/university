@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="box-home">
+        <div class ="encabezado">
+            <img src="../static/images/logo.jpg" class="avatar" >
+            <h1>Colegio San Miguel</h1>
+        </div>
+
+        <h2>Bienvenido al Sistema de Asistencia</h2>
+
+        {% if tipo_usuario == 'preceptor' %}
+            <div class="selecurso">
+                <h3>Cursos asignados:</h3>
+                <select id="cursoSelect">
+                    <option value="" selected disabled hidden>Seleccione un curso</option>
+                    {% for curso in cursos %}
+                    <option value="{{ curso.id }}">Año: {{ curso.anio }}°, División: {{ curso.division }}</option>
+                    {% endfor %}
+                </select>
+
+                <div id="funcionalidades">
+                    <ul class="funcionalidades-list">
+                        <p style=" font-size: 0%;"> &nbsp; &nbsp; </p>
+                        <li><a id="registrarAsistencia" href="#">Registrar Asistencia</a></li>
+                        <p style=" font-size: 0%;"> &nbsp; &nbsp; </p>
+                        <li><a id="informeDetallado" href="#">Informe Detallado</a></li>
+                        <p style=" font-size: 0%;"> &nbsp; &nbsp; </p>
+                        <li><a id="listadoAsistencia" href="#">Listado de Asistencia</a></li>
+                    </ul>
+                </div>
+                
+                <div id="mensajeCartel" style="display: none;"></div>
+                <script>
+                    document.getElementById("cursoSelect").addEventListener("change", function() {
+                        var cursoSelect = document.getElementById("cursoSelect");
+                        var mensajeCartel = document.getElementById("mensajeCartel");
+                        if (cursoSelect.value === "") {
+                            mensajeCartel.innerHTML = "Seleccione un Curso";
+                            mensajeCartel.style.display = "none";
+                        } else {
+                            var cursoId = cursoSelect.value;
+                            document.getElementById("registrarAsistencia").href = "{{ url_for('registrar_asistencia', curso_id=0) | replace('0', '') }}"+cursoId;
+                            document.getElementById("informeDetallado").href = "{{ url_for('informe_detallado', curso_id=0) | replace('0', '') }}"+cursoId;
+                            document.getElementById("listadoAsistencia").href = "{{ url_for('listado_asistencia_form', curso_id=0) | replace('0', '') }}"+cursoId;
+                        
+                            
+                        }
+                    });
+                </script>
+            </div>    
+
+        {% else %}
+            <div class="padre">
+                <ul>
+                    <li>
+                    <a href="{{ url_for('consultar_inasistencias') }}">Consulte las inasistencias de su hijo</a>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+         
+            <a href="{{ url_for('logout') }}" class="btn btn-primary">Cerrar sesión</a>
+         
+{% endblock %}
+

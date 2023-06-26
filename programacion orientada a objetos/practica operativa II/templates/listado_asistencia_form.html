@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="boxlistado">
+    <div class ="encabezado">
+      <img src="../static/images/logo.jpg" class="avatar" >
+      <h1>Colegio San Miguel</h1>
+  </div>
+  <h1>Listado de asistencia</h1>
+
+  <form method="POST" action="{{ url_for('listado_asistencia_form', curso_id=curso_id) }}">
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" name="fecha" required>
+    <label for="codigoclase">Clase:</label>
+
+    <select name="codigoclase">
+        <option value="1">Aula</option>
+        <option value="2">Educación física</option>
+    </select>
+    
+    <input type="submit" value="Consultar">
+    
+    <a href="{{ url_for('home') }}" class="btn btn-primary", >Volver</a>
+  </form>
+</div>
+
+{% endblock %}

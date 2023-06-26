@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="listado">
+  <div class ="encabezado">
+    <img src="../static/images/logo.jpg" class="avatar" >
+    <h1>Colegio San Miguel</h1>
+</div>
+
+<h1>Listado de asistencia</h1>
+<table>
+  <thead>
+    <tr>
+      <th class="columna-separada1">Nombre</th>
+      <th class="columna-separada">Apellido</th>
+      <th class="columna-separada">Asistencia</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for estudiante in lista_asistencia %}
+      <tr>
+        <tr class="spacer-row"></tr>
+        <td>{{ estudiante.nombre }}</td>
+        <td>{{ estudiante.apellido }}</td>
+        <td>
+
+          {% if estudiante.asistio == 's' %}
+            Sí
+          {% elif estudiante.asistio == 'n' %}
+            No
+          {% else %}
+            No existe registro de asistencia 
+          {% endif %}
+
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="{{ url_for('home') }}" class="btn btn-primary">Volver</a>
+
+</div>
+
+{% endblock %}

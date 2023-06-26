@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="informe">
+        <div class ="encabezado">
+            <img src="../static/images/logo.jpg" class="avatar" >
+            <h1>Colegio San Miguel</h1>
+        </div>
+        <h1>Informe Detallado</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Estudiante</th>
+                    <th>Aula Presente</th>
+                    <th>Aula Ausente Just.</th>
+                    <th>Aula Ausente Injust.</th>
+                    <th>Ed. Física Presente</th>
+                    <th>Ed. Física Ausente Just.</th>
+                    <th>Ed. Física Ausente Injust.</th>
+                    <th>Total Inasistencias</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for item in informe %}
+                    <tr>
+                        <td>{{ item.estudiante.nombre }} {{ item.estudiante.apellido }}</td>
+                        <td>{{ item.aula_presente }}</td>
+                        <td>{{ item.aula_ausente_justificada }}</td>
+                        <td>{{ item.aula_ausente_injustificada }}</td>
+                        <td>{{ item.edu_fisica_presente }}</td>
+                        <td>{{ item.edu_fisica_ausente_justificada }}</td>
+                        <td>{{ item.edu_fisica_ausente_injustificada }}</td>
+                        <td>{{ item.total_inasistencias }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    <a href="{{ url_for('home') }}" class="btn btn-primary", >Volver</a>
+    
+    </div>
+
+{% endblock %}
