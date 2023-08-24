@@ -1,11 +1,12 @@
 import numpy as np
+from typing import Any
 
 class Pila:
     __tope: int
     __size: int 
     __arreglo = None
 
-    def __init__(self, size) -> None:
+    def __init__(self, size: int) -> None:
         self.__tope = 0
         self.__size = size
         self.__arreglo = np.empty(size)
@@ -19,7 +20,7 @@ class Pila:
     def getTope(self) -> int:
         return self.__tope
     
-    def apilar(self, elemento) -> None:
+    def apilar(self, elemento: Any) -> None:
         if not self.__llena():
             self.__arreglo[self.__tope] = elemento
             self.__tope += 1
