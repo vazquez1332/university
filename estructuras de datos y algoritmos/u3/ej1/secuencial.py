@@ -25,7 +25,8 @@ class Pila:
     def suprimir(self):
         if not self.vacia():
             item = self.__items[self.__tope]
-            self.__items[self.__tope] = None
+            del(self.__items[self.__tope])
+            # self.__items[self.__tope] = None
             self.__tope -= 1
 
         return item
